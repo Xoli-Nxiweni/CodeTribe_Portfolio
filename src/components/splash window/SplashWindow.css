@@ -1,0 +1,25 @@
+/* SplashWindow.css */
+
+.splash-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.splash-window .logo {
+    width: 150px;
+    height: 150px;
+    background-image: url('/path/to/logo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.splash-window .loading-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
