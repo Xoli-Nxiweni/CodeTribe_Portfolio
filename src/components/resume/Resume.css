@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+.resume {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff, #e5e7eb);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resume-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.resume-section {
+    margin-bottom: 2.5rem;
+}
+
+.resume-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #374151;
+    font-weight: 600;
+    border-bottom: 2px solid #60a5fa;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.resume-item {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    list-style: none;
+}
+
+.resume-item:last-child {
+    border-bottom: none;
+}
+
+.resume-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    list-style: none;
+}
+
+.resume-skill-item {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #f9fafb;
+}
+
+@media (max-width: 600px) {
+    .resume {
+        padding: 1.5rem;
+    }
+
+    .resume-title {
+        font-size: 2rem;
+    }
+
+    .resume-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .resume-item {
+        font-size: 0.9rem;
+    }
+
+    .resume-skill-item {
+        font-size: 0.8rem;
+    }
+}

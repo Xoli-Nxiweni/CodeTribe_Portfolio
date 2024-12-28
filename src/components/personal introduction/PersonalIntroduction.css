@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+.personal-introduction {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff, #e5e7eb);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #374151;
+}
+
+.intro-quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #6b7280;
+}
+
+@media (max-width: 600px) {
+    .personal-introduction {
+        padding: 1.5rem;
+    }
+
+    .intro-title {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        font-size: 1.1rem;
+    }
+
+    .intro-quote {
+        font-size: 0.9rem;
+    }
+}

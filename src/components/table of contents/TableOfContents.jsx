@@ -9,14 +9,13 @@ import FeedbackAndReflections from "../feedback and reflections/FeedbackAndRefle
 import PostProgramGoals from "../post program goals/PostProgramGoals";
 import Contact from "../contact/Contact";
 import "./TableOfContents.css";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { BiMessage } from "react-icons/bi";
 
 const TableOfContents = () => {
   const [currentPage, setCurrentPage] = useState("");
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const pages = [
     { id: "personal-introduction", label: "👋 Personal Introduction", component: PersonalIntroduction },
@@ -27,13 +26,13 @@ const TableOfContents = () => {
     { id: "assessments", label: "📝 Assessments", component: Assessments },
     { id: "feedback-and-reflections", label: "💭 Feedback & Reflections", component: FeedbackAndReflections },
     { id: "post-program-goals", label: "🎯 Post-Program Goals", component: PostProgramGoals },
-    { id: "contact-me", label: "Contact Me", component: Contact },
   ];
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
-      setCurrentPage(hash || pages[0].id);
+      const validPage = pages.find((p) => p.id === hash);
+      setCurrentPage(validPage ? hash : pages[0].id);
     };
 
     handleHashChange();
@@ -77,32 +76,61 @@ const TableOfContents = () => {
               {page.label}
             </a>
           ))}
+          <button className="ContactBtn" onClick={() => setIsContactOpen(true)}>
+            Contact Me!!
+          </button>
+
+          {isContactOpen && <Contact onClose={() => setIsContactOpen(false)} />}
         </nav>
       </div>
 
       {/* Main Container */}
       <div className="myContainer">
-      <div className="topPart">
-    <div className="contact-bar">
-        <span>📞 Phone: <a href="tel:+27605450493">+27 60 545 0493</a></span>
-        <span>📧 Email: <a href="mailto:xolinxiweni@gmail.com">xolinxiweni@gmail.com</a></span>
-        <span className="social-icons">
-            <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <FaLinkedin /> Linkedin
-            </a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <FaGithub /> Github
-            </a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" title="Twitter">
-                <FaSquareXTwitter /> Twitter
-            </a>
-            <a href={''} target="_blank" rel="noopener noreferrer" title="Twitter">
-                <BiMessage /> Contact
-            </a>
-        </span>
-    </div>
-</div>
-
+        <div className="topPart">
+          <div className="logo">XOLI</div>
+          <div className="contact-bar">
+            <span>
+              <a href="tel:+27605450493" aria-label="Call Me">📞</a>
+            </span>
+            <span>
+              <a href="mailto:xolinxiweni@gmail.com" aria-label="Email Me">📧</a>
+            </span>
+            <span className="social-icons">
+              <a
+                href="https://linkedin.com/in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://wa.me/27617514638"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Me"
+              >
+                <FaWhatsapp />
+              </a>
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter Profile"
+              >
+                <FaSquareXTwitter />
+              </a>
+            </span>
+          </div>
+        </div>
         <div className="content">{renderPage()}</div>
       </div>
     </div>

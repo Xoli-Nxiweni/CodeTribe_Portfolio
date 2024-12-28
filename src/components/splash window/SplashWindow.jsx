@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './SplashWindow.css';
+import image from '../../assets/NewLogo.png';
 
 const SplashWindow = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -9,7 +10,7 @@ const SplashWindow = () => {
             setIsVisible(false);
             window.location.hash = 'cover';
             console.log('SplashWindow disappearing, changing hash to cover');
-        }, 3000);
+        }, 100000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -20,7 +21,7 @@ const SplashWindow = () => {
 
     return (
         <div className="splash-window">
-            <h1>Welcome to CodeTribe</h1>
+            <img src={image} alt="" />
         </div>
     );
 };
